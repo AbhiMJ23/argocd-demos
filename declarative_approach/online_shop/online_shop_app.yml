@@ -11,9 +11,12 @@ spec:
     path: declarative_approach/online_shop
   destination:
     server: https://kubernetes.default.svc   # Replace with your Cluster Url, To get run: `argocd cluster list`
-    namespace: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    namespace: online-shop-app
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+    enabled: true
+  syncOptions:
+    - CreateNamespace=true
     
